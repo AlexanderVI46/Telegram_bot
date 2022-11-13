@@ -3,7 +3,6 @@ from telebot import types
 # Alexander_programmer имя бота (BotFather)
 bot = telebot.TeleBot('5624867909:AAEnU-yEKyzTkQfq2JUkO4cToWmCti73TSk')
 
-
 @bot.message_handler(commands=['start'])
 def start(message):
     if message.from_user.last_name == None:
@@ -42,8 +41,6 @@ CV - Загрузить резюме
 photo -Посмотреть фото''', reply_markup=markup)
 # mySite https://sharp-cray-0a9d4f.netlify.app
 
-
-
 @bot.message_handler(content_types=['text'])
 def get_user_text(message):
     if message.text == 'Привет!':
@@ -59,13 +56,9 @@ def get_user_text(message):
     else:
         bot.send_message(message.chat.id, 'Я тебя не понимаю!!!', parse_mode='html')
 
-
 @bot.message_handler(content_types=['photo'])
 def get_user_photo(message):
     bot.send_message(message.chat.id, 'Крутое фото!')
-
-
-
 
 
 bot.polling(none_stop=True)
